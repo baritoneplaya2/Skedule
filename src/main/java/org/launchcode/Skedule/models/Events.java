@@ -5,7 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import java.sql.Time;
+import java.util.Date;
 
 @Entity
 public class Events {
@@ -15,25 +16,32 @@ public class Events {
     private int id;
 
     @NotBlank
-    @Size
     private String title;
 
     @NotBlank
-    @Size
-    private int date;
+    private Date startDate;
 
     @NotBlank
-    @Size
-    private int startTime;
+    private Time startTime;
 
     @NotBlank
-    @Size(min=2)
-    private int duration;
+    private Date endDate;
+
+    @NotBlank
+    private Time endTime;
 
     @ManyToOne
     private Users users;
 
+    public Events(String title, Date startDate, Time startTime, Date endDate, Time endTime) {
+        this.title = title;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.endDate = endDate;
+        this.endTime = endTime;
+    }
 
+    public Events() {}
 
     public Users getUsers() {
         return users;
@@ -41,5 +49,49 @@ public class Events {
 
     public void setUsers(Users users) {
         this.users = users;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Time getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Time getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
 }

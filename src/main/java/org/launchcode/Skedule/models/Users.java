@@ -33,13 +33,17 @@ public class Users {
     @JoinColumn(name = "user_id")
     private List<Events> events = new ArrayList<>();
 
+    public Users() {}
+
     public Users(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    public Users() {}
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
