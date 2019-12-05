@@ -1,10 +1,47 @@
 <!DOCTYPE html>
+<!--Register screen-->
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
-<body>
+    <head th:replace="fragment :: head"></head>
+    <body class="container">
+        <header th:replace="fragment :: header"></header>
 
-</body>
+        <div class = "registerbody">
+            <form method = "post" name = "registerForm" >
+                <div id = "name" class = "form-group">
+                    <label>Full Name</label>
+                    <input class = "form-control" type = "text" name = "name"/>
+                    <div class = "error"></div>
+                </div>
+
+                <div id = "email" class = "form-group">
+                    <label>Email</label>
+                    <input class = "form-control" type = "email" name = "email"/>
+                    <div class = "error" ></div>
+                </div>
+                <div id = "password" class = "form-group">
+                    <label>Password</label>
+                    <input class = "form-control" type = "password" name = "password"/>
+                    <div class = "error" ></div>
+                </div>
+                <div id = "verify" class = "form-group">
+                    <label>Verify Password</label>
+                    <input class = "form-control" type = "password" name = "verify"/>
+                    <div class = "error" ></div>
+                </div>
+                <div class = "submitbutton">
+                    <button class = "button" type = "submit" value = "Create Account" >Create Account</button>
+                </div>
+            </form>
+
+            <!--log in button-->
+            <div class = "bottombutton">
+                <p>Already Registered? <br> Login instead!</p>
+                <a href = "/login">
+                    <button class = "button" type = "submit" value = "Login" >Login</button>
+                </a>
+            </div>
+        </div>
+
+        <footer th:replace="fragment :: footer"></footer>
+    </body>
 </html>
