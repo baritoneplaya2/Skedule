@@ -30,7 +30,7 @@ public class Users {
     private String verify;
 
     @OneToMany
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "users_id")
     private List<Events> events = new ArrayList<>();
 
     public Users() {}
@@ -70,7 +70,7 @@ public class Users {
         checkPassword();
     }
 
-    public String getVerifyPassword() {
+    public String getVerify() {
         return verify;
     }
 
