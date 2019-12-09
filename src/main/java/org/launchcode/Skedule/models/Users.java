@@ -26,7 +26,8 @@ public class Users {
     @Size(min=8, max=20, message = "Password must be at least 8 characters long")
     private String password;
 
-    @NotBlank(message = "Passwords do not match")
+    @NotBlank //(message = "Passwords do not match")
+    @Transient  //temp value not going to table
     private String verify;
 
     @OneToMany

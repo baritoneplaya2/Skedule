@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("users")
+@RequestMapping(value="")
 public class UsersController {
+
     @Autowired
     private UsersDao usersDao;
 
@@ -25,22 +26,53 @@ public class UsersController {
     }
 
 //    register page
-    @RequestMapping(value="register", method = RequestMethod.GET)
+    @RequestMapping(value="/register", method = RequestMethod.GET)
     public String register(Model model) {
-        model.addAttribute("myuser", new Users());
+        Users users = new Users();
+        model.addAttribute("users", users);
         model.addAttribute("title", "Register");
-        model.addAttribute("users", usersDao.findAll());
         return "/register";
     }
 
-    @RequestMapping(value="register", method = RequestMethod.POST)
-    public String register(Model model, @ModelAttribute @Valid Users users, Errors errors) {
+    @RequestMapping(value="/register", method = RequestMethod.POST)
+    public String register(Model model, @ModelAttribute @Valid Users users, Errors errors, String verify) {
         model.addAttribute(users);
-            if (errors.hasErrors()) {
-                return "/register";
-            } else {
-                usersDao.save(users);
-                return "redirect:/calendar";
-            }
+        if (users != new Users()) {
+
+        }
+        boolean passwordsMatch = true;
+        if (users.getPassword() == "{null}" || verify == "{null}"
+                || !users.getPassword().equals(verify)) {
+            passwordsMatch = false;
+            users.setPassword("{null}");
+            model.addAttribute("verifyError", "Passwords must match");
+        }
+
+        if (!errors.hasErrors() && passwordsMatch) {
+            usersDao.save(users);
+            return "redirect:/calendar";
+        }
+
+        return "/register";
+
+    }
+
+    //    login page
+    @RequestMapping(value="/login", method = RequestMethod.GET)
+    public String login(Model model) {
+        model.addAttribute("users", new Users());
+        model.addAttribute("title", "Login");
+        model.addAttribute("users", usersDao.findById());
+        return "/login";
+    }
+
+    @RequestMapping(value="login", method = RequestMethod.POST)
+    public String login(Model model, @ModelAttribute @Valid Users users, Errors errors) {
+        model.addAttribute(users);
+        if (errors.hasErrors()) {
+            return "/login";
+        } else {
+            return "redirect:/calendar";
+        }
     }
 }

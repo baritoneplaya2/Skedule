@@ -6,27 +6,27 @@
         <header th:replace="fragment :: header"></header>
 
         <div class = "registerbody">
-            <form method = "post" name = "registerForm" >
-                <div id = "name" class = "form-group">
-                    <label>Full Name</label>
-                    <input class = "form-control" type = "text" name = "name"/>
-                    <div class = "error"></div>
+            <form method="post" th:object="${users}">
+                <div class = "form-group">
+                    <label th:for="*{name}">Full Name</label>
+                    <input type = "text" th:field="*{name}" id = "name" class = "form-control"/>
+                    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class = "error" ></div>
                 </div>
 
-                <div id = "email" class = "form-group">
+                <div class = "form-group">
                     <label>Email</label>
-                    <input class = "form-control" type = "email" name = "email"/>
-                    <div class = "error" ></div>
+                    <input type = "email" th:field="*{email}" id = "email" class = "form-control" />
+                    <div  th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class = "error" ></div>
                 </div>
-                <div id = "password" class = "form-group">
+                <div class = "form-group">
                     <label>Password</label>
-                    <input class = "form-control" type = "password" name = "password"/>
-                    <div class = "error" ></div>
+                    <input type = "password" th:field="*{password}" id = "password" class = "form-control"/>
+                    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class = "error" ></div>
                 </div>
-                <div id = "verify" class = "form-group">
+                <div class = "form-group">
                     <label>Verify Password</label>
-                    <input class = "form-control" type = "password" name = "verify"/>
-                    <div class = "error" ></div>
+                    <input type = "password" th:field="*{verify}" id = "verify" class = "form-control" />
+                    <div th:if="${#fields.hasErrors('verify')}" th:errors="*{verify}" class = "error" ></div>
                 </div>
                 <div class = "submitbutton">
                     <button class = "button" type = "submit" value = "Create Account" >Create Account</button>
