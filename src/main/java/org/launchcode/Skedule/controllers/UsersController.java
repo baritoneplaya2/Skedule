@@ -63,11 +63,4 @@ public class UsersController {
         }
         return "/login";
     }
-
-    //    calendar page
-    @RequestMapping(value="/calendar", method = RequestMethod.GET)
-    public String calendar(Model model) {
-        model.addAttribute("title", "Calendar");
-        return "/calendar";
-    }
 }

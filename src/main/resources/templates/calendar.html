@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-    <head>
-        <meta charset="UTF-8"/>
-        <title></title>
-    </head>
-    <body>
-        <p>CALENDAR</p>
+    <head th:replace="fragment :: head"></head>
+    <body class="calendar">
+        <a href = "/settings">
+            <button class = "button" type = "submit" value = "settings" ><h3 class = "settingsbutton">Settings</h3></button>
+        </a>
+        <a href = "/calendar">
+            <button class = "button" type = "submit" value = "calendar" ><h1 class = calendartitle>CALENDAR</h1></button>
+        </a>
+        <a href = "/add">
+            <button class = "button" type = "submit" value = "add" ><h3 class = "addbutton">Add Event</h3></button>
+        </a>
     </body>
 </html>
