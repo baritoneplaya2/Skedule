@@ -24,4 +24,4 @@ I decided to make this project because a group of my girlfriends and I do a girl
 I will learn how to make a Java project from scratch, since all of our projects have been pretty much started for us. I am learning how to use Trello, which will help me break down my project into steps and keep organized. I also have to learn how to use bootstraps to their full potential and React in order to have a better handle on the front end needs, and not have to do a whole css file from scratch.
 
 ## Project Tracker
-*Trello Board:* https://trello.com/invite/b/RrpWuWZX/e5a6ae95d90c6a331561ccbc724a8a04/skedule-get-together-app
+*Trello Board:* https://trello.com/b/RrpWuWZX/skedule-get-together-app
