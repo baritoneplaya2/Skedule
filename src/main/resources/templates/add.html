@@ -3,380 +3,60 @@
     <head th:replace="fragment :: head"></head>
     <body>
 
-    <div class = "addtocalendar">
-        <h1 class = event-title>Add Event To Calendar</h1>
-        <form method = "post" class = "must" th:object="${events}">
-            <div id = "title" class = "add-form">
-                <label th:for="*{title}">Title</label>
-                <input th:field="*{title}" type = text class = "add-form-control" />
-<!--                <div class = "error" th:errors="*{name}"></div>-->
-            </div>
+        <div class = "addtocalendar">
+            <h1 class = event-title>Add Event To Calendar</h1>
+            <form method = "post" class = "must" th:object="${events}">
 
-            <div id = "startdate" class = "add-form">
-                <label>Start Date</label>
-                <label th:for="*{startMonth}" ></label>
-                <select th:field="*{startMonth}" name = "month" class = "add-form-control">
-                    <option value='0'>Month</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                </select>
-                <label th:for="*{startDay}" ></label>
-                <select th:field="*{startDay}" name='day' class = "add-form-control">
-                    <option value='0'>Day</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                    <option value='13'>13</option>
-                    <option value='14'>14</option>
-                    <option value='15'>15</option>
-                    <option value='16'>16</option>
-                    <option value='17'>17</option>
-                    <option value='18'>18</option>
-                    <option value='19'>19</option>
-                    <option value='20'>20</option>
-                    <option value='21'>21</option>
-                    <option value='22'>22</option>
-                    <option value='23'>23</option>
-                    <option value='24'>24</option>
-                    <option value='25'>25</option>
-                    <option value='26'>26</option>
-                    <option value='27'>27</option>
-                    <option value='28'>28</option>
-                    <option value='29'>29</option>
-                    <option value='30'>30</option>
-                    <option value='31'>31</option>
-                </select>
-                <label th:for="*{startYear}" ></label>
-                <select th:field="*{startYear}" name='year' class = "add-form-control">
-                    <option value='0'>Year</option>
-                    <option value='2020'>2020</option>
-                    <option value='2019'>2019</option>
-                    <option value='2018'>2018</option>
-                    <option value='2017'>2017</option>
-                    <option value='2016'>2016</option>
-                    <option value='2015'>2015</option>
-                    <option value='2014'>2014</option>
-                    <option value='2013'>2013</option>
-                    <option value='2012'>2012</option>
-                    <option value='2011'>2011</option>
-                    <option value='2010'>2010</option>
-                    <option value='2009'>2009</option>
-                    <option value='2008'>2008</option>
-                    <option value='2007'>2007</option>
-                    <option value='2006'>2006</option>
-                    <option value='2005'>2005</option>
-                    <option value='2004'>2004</option>
-                    <option value='2003'>2003</option>
-                    <option value='2002'>2002</option>
-                    <option value='2001'>2001</option>
-                    <option value='2000'>2000</option>
-                </select>
-            </div>
-
-            <div id = "starttime" class = "add-form">
-                <label>Start Time</label>
-                <label th:for="*{startHour}" ></label>
-                <select th:field="*{startHour}" name = "hour" class = "add-form-control">
-                    <option value='0'>Hour</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                </select>
-                <label th:for="*{startMinutes}" ></label>
-                <select th:field="*{startMinutes}" name = "min" class = "add-form-control">
-                    <option value='0'>Minute</option>
-                    <option value='00'>00</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                    <option value='13'>13</option>
-                    <option value='14'>14</option>
-                    <option value='15'>15</option>
-                    <option value='16'>16</option>
-                    <option value='17'>17</option>
-                    <option value='18'>18</option>
-                    <option value='19'>19</option>
-                    <option value='20'>20</option>
-                    <option value='21'>21</option>
-                    <option value='22'>22</option>
-                    <option value='23'>23</option>
-                    <option value='24'>24</option>
-                    <option value='25'>25</option>
-                    <option value='26'>26</option>
-                    <option value='27'>27</option>
-                    <option value='28'>28</option>
-                    <option value='29'>29</option>
-                    <option value='30'>30</option>
-                    <option value='31'>31</option>
-                    <option value='32'>32</option>
-                    <option value='33'>33</option>
-                    <option value='34'>34</option>
-                    <option value='35'>35</option>
-                    <option value='36'>36</option>
-                    <option value='37'>37</option>
-                    <option value='38'>38</option>
-                    <option value='39'>39</option>
-                    <option value='40'>40</option>
-                    <option value='41'>41</option>
-                    <option value='42'>42</option>
-                    <option value='43'>43</option>
-                    <option value='44'>44</option>
-                    <option value='45'>45</option>
-                    <option value='46'>46</option>
-                    <option value='47'>47</option>
-                    <option value='48'>48</option>
-                    <option value='49'>49</option>
-                    <option value='50'>50</option>
-                    <option value='51'>51</option>
-                    <option value='52'>52</option>
-                    <option value='53'>53</option>
-                    <option value='54'>54</option>
-                    <option value='55'>55</option>
-                    <option value='56'>56</option>
-                    <option value='57'>57</option>
-                    <option value='58'>58</option>
-                    <option value='59'>59</option>
-                </select>
-                <label th:for="*{startampm}" ></label>
-                <select th:field="*{startampm}" name = "ampm" class = "add-form-control">
-                    <option value='0'>AM/PM</option>
-                    <option value='am'>AM</option>
-                    <option value='pm'>PM</option>
-                </select>
-            </div>
-
-            <div id = "enddate" class = "add-form">
-                <label>End Date</label>
-                <label th:for="*{endMonth}" ></label>
-                <select th:field="*{endMonth}" name = "month" class = "add-form-control">
-                    <option value='0'>Month</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                </select>
-                <label th:for="*{endDay}" ></label>
-                <select th:field="*{endDay}" name='day' class = "add-form-control">
-                    <option value='0'>Day</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                    <option value='13'>13</option>
-                    <option value='14'>14</option>
-                    <option value='15'>15</option>
-                    <option value='16'>16</option>
-                    <option value='17'>17</option>
-                    <option value='18'>18</option>
-                    <option value='19'>19</option>
-                    <option value='20'>20</option>
-                    <option value='21'>21</option>
-                    <option value='22'>22</option>
-                    <option value='23'>23</option>
-                    <option value='24'>24</option>
-                    <option value='25'>25</option>
-                    <option value='26'>26</option>
-                    <option value='27'>27</option>
-                    <option value='28'>28</option>
-                    <option value='29'>29</option>
-                    <option value='30'>30</option>
-                    <option value='31'>31</option>
-                </select>
-                <label th:for="*{endYear}" ></label>
-                <select th:field="*{endYear}" name='year' class = "add-form-control">
-                    <option value='0'>Year</option>
-                    <option value='2020'>2020</option>
-                    <option value='2019'>2019</option>
-                    <option value='2018'>2018</option>
-                    <option value='2017'>2017</option>
-                    <option value='2016'>2016</option>
-                    <option value='2015'>2015</option>
-                    <option value='2014'>2014</option>
-                    <option value='2013'>2013</option>
-                    <option value='2012'>2012</option>
-                    <option value='2011'>2011</option>
-                    <option value='2010'>2010</option>
-                    <option value='2009'>2009</option>
-                    <option value='2008'>2008</option>
-                    <option value='2007'>2007</option>
-                    <option value='2006'>2006</option>
-                    <option value='2005'>2005</option>
-                    <option value='2004'>2004</option>
-                    <option value='2003'>2003</option>
-                    <option value='2002'>2002</option>
-                    <option value='2001'>2001</option>
-                    <option value='2000'>2000</option>
-                </select>
-            </div>
-
-            <div id = "endtime" class = "add-form">
-                <label>End Time</label>
-                <label th:for="*{endHour}" ></label>
-                <select th:field="*{endHour}" name = "hour" class = "add-form-control">
-                    <option value='0'>Hour</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                </select>
-                <label th:for="*{endMinutes}" ></label>
-                <select th:field="*{endMinutes}" name = "min" class = "add-form-control">
-                    <option value='0'>Minutes</option>
-                    <option value='00'>00</option>
-                    <option value='01'>01</option>
-                    <option value='02'>02</option>
-                    <option value='03'>03</option>
-                    <option value='04'>04</option>
-                    <option value='05'>05</option>
-                    <option value='06'>06</option>
-                    <option value='07'>07</option>
-                    <option value='08'>08</option>
-                    <option value='09'>09</option>
-                    <option value='10'>10</option>
-                    <option value='11'>11</option>
-                    <option value='12'>12</option>
-                    <option value='13'>13</option>
-                    <option value='14'>14</option>
-                    <option value='15'>15</option>
-                    <option value='16'>16</option>
-                    <option value='17'>17</option>
-                    <option value='18'>18</option>
-                    <option value='19'>19</option>
-                    <option value='20'>20</option>
-                    <option value='21'>21</option>
-                    <option value='22'>22</option>
-                    <option value='23'>23</option>
-                    <option value='24'>24</option>
-                    <option value='25'>25</option>
-                    <option value='26'>26</option>
-                    <option value='27'>27</option>
-                    <option value='28'>28</option>
-                    <option value='29'>29</option>
-                    <option value='30'>30</option>
-                    <option value='31'>31</option>
-                    <option value='32'>32</option>
-                    <option value='33'>33</option>
-                    <option value='34'>34</option>
-                    <option value='35'>35</option>
-                    <option value='36'>36</option>
-                    <option value='37'>37</option>
-                    <option value='38'>38</option>
-                    <option value='39'>39</option>
-                    <option value='40'>40</option>
-                    <option value='41'>41</option>
-                    <option value='42'>42</option>
-                    <option value='43'>43</option>
-                    <option value='44'>44</option>
-                    <option value='45'>45</option>
-                    <option value='46'>46</option>
-                    <option value='47'>47</option>
-                    <option value='48'>48</option>
-                    <option value='49'>49</option>
-                    <option value='50'>50</option>
-                    <option value='51'>51</option>
-                    <option value='52'>52</option>
-                    <option value='53'>53</option>
-                    <option value='54'>54</option>
-                    <option value='55'>55</option>
-                    <option value='56'>56</option>
-                    <option value='57'>57</option>
-                    <option value='58'>58</option>
-                    <option value='59'>59</option>
-                </select>
-                <label th:for="*{endamppm}" ></label>
-                <select th:field="*{endampm}" name = "ampm" class = "add-form-control">
-                    <option value='0'>AM/PM</option>
-                    <option value='am'>AM</option>
-                    <option value='pm'>PM</option>
-                </select>
-            </div>
-
-            <div class = "extra">
-                <div id = "location" class = "extra-add-form">
-                    <select name = "location" class = "add-form-control">
-                        <option value='0'>Location</option>
-                    </select>
+                <div id = "title" class = "add-form">
+                    <label th:for="*{title}">Title</label>
+                    <input th:field="*{title}" type = text class = "add-form-control" />
                 </div>
 
-                <div id = "group" class = "extra-add-form">
-                    <select name = "group" class = "add-form-control">
-                        <option value='0'>Group</option>
-                    </select>
+                <div id = "startdate" class = "add-form">
+                    <label th:for="*{startDate}">Start Date</label>
+                    <input th:field="*{startDate}" type = "date" id = "start_date" />
                 </div>
 
-                <div id = "reminder" class = "extra-add-form">
-                    <select name = "reminder" class = "add-form-control">
-                        <option value='0'>Reminder</option>
-                    </select>
+                <div id = "starttime" class = "add-form">
+                    <label th:for="*{startTime}">Start Time</label>
+                    <input th:field="*{startTime}" type = "time" id = "start_time" />
                 </div>
-            </div>
+                <br>
+                <div id = "enddate" class = "add-form">
+                    <label th:for="*{endDate}">End Date</label>
+                    <input th:field="*{endDate}" type = "date" id = "end_date" />
+                </div>
 
-            <div class = "submitbutton">
-                <input class = "button" type = "submit" value = "Save Event" />
-            </div>
-        </form>
+                <div id = "endtime" class = "add-form">
+                    <label th:for="*{endTime}">End Time</label>
+                    <input th:field="*{endTime}" type = "time" id = "end_time" />
+                </div>
 
+<!--                <div class = "extra">-->
+<!--                    <div id = "location" class = "extra-add-form">-->
+<!--                        <select name = "location" class = "add-form-control">-->
+<!--                            <option value='select'>Location</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+
+<!--                    <div id = "group" class = "extra-add-form">-->
+<!--                        <select name = "group" class = "add-form-control">-->
+<!--                            <option value='select'>Group</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+
+<!--                    <div id = "reminder" class = "extra-add-form">-->
+<!--                        <select name = "reminder" class = "add-form-control">-->
+<!--                            <option value='select'>Reminder</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+                <div class = "submitbutton">
+                    <input class = "button" type = "submit" value = "Save Event" />
+                </div>
+            </form>
+        </div>
 
     </body>
 </html>

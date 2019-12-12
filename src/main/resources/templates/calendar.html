@@ -2,14 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragment :: head"></head>
     <body class="calendar">
-        <a href = "/settings">
-            <button class = "button" type = "submit" value = "settings" ><h3 class = "settingsbutton">Settings</h3></button>
-        </a>
-        <a href = "/calendar">
-            <button class = "button" type = "submit" value = "calendar" ><h1 class = calendartitle>CALENDAR</h1></button>
-        </a>
-        <a href = "/add">
-            <button class = "button" type = "submit" value = "add" ><h3 class = "addbutton">Add Event</h3></button>
-        </a>
+    <ul class="navigation">
+        <li class = "settingsbutton">
+            <a href = "/settings">
+                <button class = "button" type = "submit" value = "settings" >Settings</button>
+            </a>
+        </li>
+
+        <li class = calendartitle>
+            <button class = "calendarbutton" value = "calendar" >CALENDAR</button>
+        </li>
+
+        <li class = "addbutton">
+            <a href = "/calendar/add">
+                <button class = "button" type = "submit" value = "add" >Add Event</button>
+            </a>
+        </li>
+    </ul>
     </body>
 </html>
