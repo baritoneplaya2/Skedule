@@ -35,7 +35,7 @@ public class EventsController {
         Events events = new Events();
         model.addAttribute("events", events);
         model.addAttribute("title", "Event");
-        return "add";
+        return "/add";
     }
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
@@ -46,7 +46,7 @@ public class EventsController {
             int id = events.getId();
             return "redirect:/calendar";
         }
-        return "add";
+        return "/add";
     }
 //
 //    //    event view page

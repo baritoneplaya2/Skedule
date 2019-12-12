@@ -17,40 +17,16 @@ public class Events {
     private String title;
 
     @NotBlank
-    private int startMonth;
+    private String startDate;
 
     @NotBlank
-    private int startDay;
+    private String startTime;
 
     @NotBlank
-    private int startYear;
+    private String endDate;
 
     @NotBlank
-    private int startHour;
-
-    @NotBlank
-    private int startMinutes;
-
-    @NotBlank
-    private String startampm;
-
-    @NotBlank
-    private int endMonth;
-
-    @NotBlank
-    private int endDay;
-
-    @NotBlank
-    private int endYear;
-
-    @NotBlank
-    private int endHour;
-
-    @NotBlank
-    private int endMinutes;
-
-    @NotBlank
-    private String endampm;
+    private String endTime;
 
 //    @NotBlank
 //    private String location;
@@ -64,20 +40,12 @@ public class Events {
     @ManyToOne
     private Users users;
 
-    public Events(String title, int startMonth, int startDay, int startYear, int startHour, int startMinutes, String startampm, int endMonth, int endDay, int endYear, int endHour, int endMinutes, String endampm) { //String location, String group, String reminder
+    public Events(String title, String startDate, String startTime, String endDate,String endTime) { //String location, String group, String reminder
         this.title = title;
-        this.startMonth = startMonth;
-        this.startDay = startDay;
-        this.startYear = startYear;
-        this.startHour = startHour;
-        this.startMinutes = startMinutes;
-        this.startampm = startampm;
-        this.endMonth = endMonth;
-        this.endDay = endDay;
-        this.endYear = endYear;
-        this.endHour = endHour;
-        this.endMinutes = endMinutes;
-        this.endampm = endampm;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.endDate = endDate;
+        this.endTime = endTime;
 //        this.location = location;
 //        this.group = group;
 //        this.reminder = reminder;
@@ -105,103 +73,39 @@ public class Events {
         this.title = title;
     }
 
-    public int getStartMonth() {
-        return startMonth;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartMonth(int startMonth) {
-        this.startMonth = startMonth;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public int getStartDay() {
-        return startDay;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setStartDay(int startDay) {
-        this.startDay = startDay;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public int getStartYear() {
-        return startYear;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setStartYear(int startYear) {
-        this.startYear = startYear;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
-    public int getStartHour() {
-        return startHour;
+    public String getEndTime() {
+        return endTime;
     }
 
-    public void setStartHour(int startHour) {
-        this.startHour = startHour;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
-    public int getStartMinutes() {
-        return startMinutes;
-    }
-
-    public void setStartMinutes(int startMinutes) {
-        this.startMinutes = startMinutes;
-    }
-
-    public String getStartampm() {
-        return startampm;
-    }
-
-    public void setStartampm(String startampm) {
-        this.startampm = startampm;
-    }
-
-    public int getEndMonth() {
-        return endMonth;
-    }
-
-    public void setEndMonth(int endMonth) {
-        this.endMonth = endMonth;
-    }
-
-    public int getEndDay() {
-        return endDay;
-    }
-
-    public void setEndDay(int endDay) {
-        this.endDay = endDay;
-    }
-
-    public int getEndYear() {
-        return endYear;
-    }
-
-    public void setEndYear(int endYear) {
-        this.endYear = endYear;
-    }
-
-    public int getEndHour() {
-        return endHour;
-    }
-
-    public void setEndHour(int endHour) {
-        this.endHour = endHour;
-    }
-
-    public int getEndMinutes() {
-        return endMinutes;
-    }
-
-    public void setEndMinutes(int endMinutes) {
-        this.endMinutes = endMinutes;
-    }
-
-    public String getEndampm() {
-        return endampm;
-    }
-
-    public void setEndampm(String endampm) {
-        this.endampm = endampm;
-    }
-
-//    public String getLocation() {
+    //    public String getLocation() {
 //        return location;
 //    }
 //
