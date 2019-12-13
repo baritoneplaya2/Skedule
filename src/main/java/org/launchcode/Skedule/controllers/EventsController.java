@@ -25,7 +25,9 @@ public class EventsController {
 
     //    calendar view
     @RequestMapping(value="")
-    public String calendar() {
+    public String calendar(Model model) {
+        model.addAttribute("events", eventsDao.findAll());
+        model.addAttribute("title", "Calendar");
         return "/calendar";
     }
 
@@ -42,6 +44,7 @@ public class EventsController {
     public String add(Model model, @ModelAttribute @Valid Events events, Errors errors) {
         model.addAttribute(events);
         if (!errors.hasErrors()) {
+
             eventsDao.save(events);
             int id = events.getId();
             return "redirect:/calendar";

@@ -2,22 +2,45 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragment :: head"></head>
     <body class="calendar">
-    <ul class="navigation">
-        <li class = "settingsbutton">
-            <a href = "/settings">
-                <button class = "button" type = "submit" value = "settings" >Settings</button>
-            </a>
-        </li>
+        <nav class="navigation">
+            <ul>
+                <li class = "settingsbutton">
+                    <a href = "/settings">
+                        <button class = "button" type = "submit" value = "settings" >Settings</button>
+                    </a>
+                </li>
 
-        <li class = calendartitle>
-            <button class = "calendarbutton" value = "calendar" >CALENDAR</button>
-        </li>
+                <li class = calendartitle>
+                    <button class = "calendarbutton" value = "calendar" >CALENDAR</button>
+                </li>
 
-        <li class = "addbutton">
-            <a href = "/calendar/add">
-                <button class = "button" type = "submit" value = "add" >Add Event</button>
-            </a>
-        </li>
-    </ul>
+                <li class = "addbutton">
+                    <a href = "/calendar/add">
+                        <button class = "button" type = "submit" value = "add" >Add Event</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <h1>Year</h1>
+            <p th:unless="${events} and ${events.size()}">No Events</p>
+
+            <table th:each="event : ${events}">
+                <!-- repeat h3 and p
+                 show 1 week at a time -->
+                <tr>
+                    <th>
+                        <h3 th:text="${event.startDate}"></h3>
+                    </th>
+                </tr>
+                <tr>
+                    <td th:text="${event.startTime}"></td>
+                    <td th:text="${event.title}"></td>
+                </tr>
+            </table>
+            <button class = "button" type = "submit">Next Week Date</button>
+        </div>
+
     </body>
 </html>
