@@ -1,10 +1,8 @@
 package org.launchcode.Skedule.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class Events {
@@ -78,7 +76,7 @@ public class Events {
     }
 
     public void setStartDate(String startDate) {
-        this.startDate = startDate;
+        this.startDate = startDate.substring(0, 10);
     }
 
     public String getStartTime() {

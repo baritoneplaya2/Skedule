@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragment :: head"></head>
+    <body>
+        <div class = "settingsbody">
+            <h1 class = event-title>Settings</h1>
+            <form method = "post" class = "settings">
+
+                <div id = "search" class = "settings-form">
+                    <label>Search</label>
+                    <input name = "search" class = "settings-form-control" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                    <table id="myTable">
+                        <tr class="header">
+                            <th style="width:60%;">Name</th>
+                            <th style="width:40%;">Country</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id = "uploadcalendar" class = "settings-form">
+                    <a>Upload Calendar</a>
+                </div>
+
+                <div id = "creategroup" class = "settings-form">
+                    <label>Create Group</label>
+                    <input name = "creategroup" class = "settings-form-control" />
+                </div>
+
+                <div id = "groups" class = "settings-form">
+                    <h3 class = "groupstitle">GROUPS:</h3>
+                    <a>Group Name</a>
+                </div>
+
+                <div class = "submitbutton">
+                    <input class = "button" type = "submit" value = "Logout" />
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    </body>
+</html>

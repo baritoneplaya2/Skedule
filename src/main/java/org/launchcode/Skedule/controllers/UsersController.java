@@ -61,6 +61,12 @@ public class UsersController {
                 return "redirect:/calendar";
             }
         }
-        return "/login";
+            return "/login";
+    }
+
+    //    settings page
+    @RequestMapping(value="settings")
+    public String settings() {
+        return "/settings";
     }
 }
