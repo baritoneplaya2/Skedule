@@ -9,4 +9,6 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface EventsDao extends CrudRepository<Events, Integer> {
+//    Events findByStartDate(String startDate);
+    Events findById(int eventsId);
 }
