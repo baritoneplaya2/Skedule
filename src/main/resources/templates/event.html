@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragment :: head"></head>
+    <body>
+
+        <div id = "body" class = "event">
+<!--            <h1 th:text="${users.name}" class = "username_event">Name's Event</h1>-->
+
+            <div th:each="event.id : ${events}" id = "eventview">
+                <tr>
+                    <h2 th:text="${event.title}"></h2>
+                </tr>
+
+                <tr>
+                    <h5 th:text="${event.startDate}">Start Date</h5>
+
+                    <h5 th:text="${event.startTime}">Start Time</h5>
+
+                    <h5 th:text="${event.endDate}">End Date</h5>
+
+                    <h5 th:text="${event.endTime}">End Time</h5>
+                </tr>
+            </div>
+
+            <div class = "editdelete">
+                <a href = "/calendar/add">
+                    <button class = "button" type = "submit" value = "add" >Edit Event</button>
+                </a>
+                <a href = "/calendar/">
+                    <button class = "button" type = "submit" value = "add" >Delete Event</button>
+                </a>
+            </div>
+        </div>
+
+    </body>
+</html>
