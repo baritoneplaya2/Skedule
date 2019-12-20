@@ -1,18 +1,23 @@
 /* GENERAL */
 body {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	overflow: hidden;
-	height: 100%;
-	max-height: 100%;
+    margin-bottom: -25px;
+    height: 100%;
 	display: block;
 	text-align: center;
+	padding: 0px 10px;
+	margin: 0px 10px;
+}
 
+#body {
+	display: block;
+	text-align: center;
+	min-height: 100%
+	margin: 15px;
+	/*margin-bottom: -25px;*/
 }
 
 .error {
-
+    color: red;
 }
 
 #appname, h1 {
@@ -25,14 +30,15 @@ body {
 }
 
 .button {
-	background: lightpink;
+	background: pink;
 	color: white;
 	border-style: solid;
 	border-color: black;
 	border-radius: 20px;
-	height: 35px;
-	width: 200px;
+	height: 30px;
+	width: 150px;
 	text-align: center;
+	margin: 5px;
 }
 
 .submitbutton {
@@ -41,7 +47,6 @@ body {
 
 .bottombutton {
 	text-align: center;
-	width: 90%;
 	margin: 20px;
 }
 
@@ -70,38 +75,36 @@ form {
 	width: 100%;
 }
 
-footer,
-.push {
-	flex-shrink: 0;
+footer {
+	height: 25px;
+}
+
+#foot {
+    font-family: sans-serif;
+    font-style: bold;
+    font-size: 12pt;
 }
 
 /* INDEX */
-.indexbody {
-	display: block;
-	text-align: center;
-	flex: 1 0 auto;
-}
+
 
 /* REGISTER */
-.registerbody {
-	display: block;
-	text-align: center;
-	flex: 1 0 auto;
-}
+
 
 /* LOGIN */
-.loginbody {
-	display: block;
-	text-align: center;
-	flex: 1 0 auto;
-}
+
 
 /* CALENDAR */
+.todaysdate {
+    display: inline;
+}
 .navigation {
-    margin: 5px 0px;
-	padding: 5px 20px;
+    max-width: 75%;
+    margin: 2px 2px;
+	padding: 2px 2px;
 	height: 50px;
-	text-align: top;
+	text-align: center;
+	display: inline-block;
 }
 
 ul {
@@ -128,20 +131,21 @@ h3 {
 
 .settingsbutton {
 	text-align: center;
-	max-width: 50%;
 }
 
 .addbutton {
 	text-align: center;
-	max-width: 25%;
 }
 
 .calendartitle {
 	text-align: center;
-	margin: 0px 10px;
+	width: 20%;
+	margin-left: -5px;
+	margin-right: 100px;
 }
 
 .calendar {
+    display: block;
 	text-align: center;
 	width: 100%;
 	height: 100%;

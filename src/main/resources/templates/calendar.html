@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
     <head th:replace="fragment :: head"></head>
-    <body class="calendar">
-        <nav class="navigation">
-            <ul>
-                <li class = "settingsbutton">
-                    <a href = "/settings">
-                        <button class = "button" type = "submit" value = "settings" >Settings</button>
-                    </a>
-                </li>
+    <body class="calendar" th:object="${events}">
+        <nav id = "body">
+<!--            <nav class="navigation">-->
+<!--                    <li class = "settingsbutton">-->
+<!--                        <a href = "/settings">-->
+<!--                            <button class = "button" type = "submit" value = "settings" >Settings</button>-->
+<!--                        </a>-->
+<!--                    </li>-->
 
-                <li class = calendartitle>
-                    <button class = "calendarbutton" value = "calendar" >CALENDAR</button>
-                </li>
+                    <header class = "calendartitle">
+                        <h3 class = "calendarbutton" value = "calendar" >CALENDAR</h3>
+                        <a href = "/calendar/add">
+                            <button class = "button" type = "submit" value = "add" >Add Event</button>
+                        </a>
+                    </header>
 
-                <li class = "addbutton">
-                    <a href = "/calendar/add">
-                        <button class = "button" type = "submit" value = "add" >Add Event</button>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<!--                    <div class = "addbutton">-->
+<!--                        -->
+<!--                    </div>-->
+<!--            </nav>-->
 
-        <div>
-            <h1>Year</h1>
+
             <p th:unless="${events} and ${events.size()}">No Events</p>
 
-            <table th:each="event : ${events}">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+            <table id="myTable" th:each="event : ${events}">
                 <!-- repeat h3 and p
                  show 1 week at a time -->
-                <tr>
+                <tr class="header">
                     <th>
                         <h3 th:text="${event.startDate}"></h3>
                     </th>
                 </tr>
                 <tr>
-                    <td th:text="${event.startTime}"></td>
                     <td th:text="${event.title}"></td>
+                    <td th:text="${event.startTime}"></td>
+                    <td th:text="${event.endTime}"></td>
+<!--                    <td>   | </td>-->
+<!--                    <td><a href="calendar/event">View</a></td>-->
                 </tr>
             </table>
-            <button class = "button" type = "submit">Next Week Date</button>
-        </div>
 
+            <br>
+            <br>
+            <br>
+            <!--                <button class = "button" type = "submit">Next Week Date</button>-->
+        </nav>
+        <a href = "/">
+            <input class = "button" value = "Logout" />
+        </a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer th:replace="fragment :: footer"></footer>
+        <script type="text/javascript" th:src="@{/js/script.js}"></script>
     </body>
 </html>

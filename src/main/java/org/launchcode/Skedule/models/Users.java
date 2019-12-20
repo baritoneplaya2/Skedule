@@ -15,20 +15,25 @@ public class Users {
     private int id;
 
     @NotBlank
-    @Size(min=2)
+    @Size(min=2, message = "Please enter your name")
     private String name;
 
-    @Email
+    @NotBlank
     @Size(min=9, message = "Invalid email address")
+    @Email
     private String email;
 
     @NotBlank
     @Size(min=8, max=20, message = "Password must be at least 8 characters long")
     private String password;
 
-    @NotBlank //(message = "Passwords do not match")
+    @NotBlank (message = "Passwords do not match")
     @Transient  //temp value not going to table
     private String verify;
+
+    @NotBlank
+    @Transient  //temp value not going to table
+    private String search;
 
     @OneToMany
     @JoinColumn(name = "users_id")
@@ -87,6 +92,23 @@ public class Users {
         }
         //other password rules here in if statements, space, no nums, no char, one capital
     }
+
+//    public String getSearch() {
+//        return search;
+//    }
+//
+//    public void setSearch(String search) {
+//        this.search = search;
+//        checkSearch();
+//    }
+
+//    private void checkSearch() {
+//        if (search != null && search.equals(getEvents(events.title))
+//                && !password.equals(verify)) {
+//            verify = null;
+//        }
+//        //other password rules here in if statements, space, no nums, no char, one capital
+//    }
 
     public List<Events> getEvents() {
         return events;

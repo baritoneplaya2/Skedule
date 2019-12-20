@@ -1,5 +1,6 @@
 package org.launchcode.Skedule.controllers;
 
+import org.launchcode.Skedule.models.Events;
 import org.launchcode.Skedule.models.Users;
 import org.launchcode.Skedule.models.data.UsersDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,12 +62,24 @@ public class UsersController {
                 return "redirect:/calendar";
             }
         }
-            return "/login";
+        return "/login";
     }
 
     //    settings page
-    @RequestMapping(value="settings")
+    @RequestMapping(value="/settings")
     public String settings() {
+
         return "/settings";
+    }
+
+    @RequestMapping(value="/settings", method = RequestMethod.POST)
+    public String settings(Model model, Events events) {
+//        if (email != "" && password != "") {
+//            Users founduser = usersDao.findByEmail(email);
+//            if (password.equals(founduser.getPassword())) {
+//                return "redirect:/calendar";
+//            }
+//        }
+        return "/event";
     }
 }

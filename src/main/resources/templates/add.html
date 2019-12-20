@@ -3,7 +3,7 @@
     <head th:replace="fragment :: head"></head>
     <body>
 
-        <div class = "addtocalendar">
+        <div id = "body">
             <h1 class = event-title>Add Event To Calendar</h1>
             <form method = "post" class = "must" th:object="${events}">
 
@@ -11,7 +11,7 @@
                     <label th:for="*{title}">Title</label>
                     <input th:field="*{title}" type = text class = "add-form-control" />
                 </div>
-
+                <br>
                 <div id = "startdate" class = "add-form">
                     <label th:for="*{startDate}">Start Date</label>
                     <input th:field="*{startDate}" type = "date" id = "start_date" />
@@ -22,6 +22,7 @@
                     <input th:field="*{startTime}" type = "time" id = "start_time" />
                 </div>
                 <br>
+
                 <div id = "enddate" class = "add-form">
                     <label th:for="*{endDate}">End Date</label>
                     <input th:field="*{endDate}" type = "date" id = "end_date" />
@@ -52,11 +53,19 @@
 <!--                    </div>-->
 <!--                </div>-->
 
+                <br>
+                <br>
+                <br>
+                <br>
                 <div class = "submitbutton">
                     <input class = "button" type = "submit" value = "Save Event" />
                 </div>
             </form>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer th:replace="fragment :: footer"></footer>
     </body>
 </html>

@@ -5,10 +5,10 @@
     <body class="container">
         <header th:replace="fragment :: header"></header>
 
-        <div class = "registerbody">
+        <div id = "body">
             <form method="post" th:object="${users}">
                 <div class = "form-group">
-                    <label th:for="*{name}">Full Name</label>
+                    <label th:for="*{name}">First Name</label>
                     <input type = "text" th:field="*{name}" id = "name" class = "form-control"/>
                     <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class = "error" ></div>
                 </div>
