@@ -18,7 +18,6 @@ I decided to make this project because a group of my girlfriends and I do a girl
 * mySQL
 * HTML/CSS
 * Bootstrap
-* React
 
 ## What I'll Have to Learn
 I will learn how to make a Java project from scratch, since all of our projects have been pretty much started for us. I am learning how to use Trello, which will help me break down my project into steps and keep organized. I also have to learn how to use bootstraps to their full potential and React in order to have a better handle on the front end needs, and not have to do a whole css file from scratch. I will need to learn how to incorporate a calendar API or something to make the calendar work.
